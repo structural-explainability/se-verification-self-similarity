@@ -73,8 +73,6 @@ Follow these steps exactly when creating a new release.
 uvx gha-tools autoupdate --pin=all --write .github/workflows
 
 # Audit the resulting GitHub configuration for security findings.
-# NO .github\workflows\deploy-zensical.yml
-# YES  .github\workflows\deploy-zensical-lean.yml
 uvx zizmor@latest .github/
 
 # Validate.
