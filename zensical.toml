@@ -53,8 +53,8 @@
 
 [project]
 site_name = "Docs" # CUSTOM: Set the name that appears in the browser tab.
-site_url = ""
-repo_url = ""
+site_url = "https://structural-explainability.github.io/se-verification-self-similarity/"
+repo_url = "https://github.com/structural-explainability/se-verification-self-similarity"
 repo_name = "se-verification-self-similarity"
 site_description = "Project Documentation" # CUSTOM: Set the description.
 docs_dir = "docs" # source directory for documentation markdown files
@@ -65,7 +65,7 @@ edit_uri = "edit/main/docs/" # "Edit this page" links (GitHub)
 [project.extra]
 # WHY: Social links provide easy access to project repositories and profiles.
 social = [
-    {icon = "fontawesome/brands/github", link = "" },
+    {icon = "fontawesome/brands/github", link = "https://github.com/structural-explainability/se-verification-self-similarity" },
 ]
 
 [project.markdown_extensions]

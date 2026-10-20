@@ -1,5 +1,5 @@
 // ============================================================
-// .vscode/extensions.json (ALL-PY-SRC-REPOS)
+// .vscode/extensions.json (ALL-PY-REPOS)
 // ============================================================
 // Updated: 2026-10-11
 //
@@ -64,20 +64,11 @@
     "christian-kohler.path-intellisense", // Autocomplete for file paths in Python strings (e.g., "data/file.csv")
     // NOTE: Terminal autocomplete (tab/right-arrow) is built into the shell (bash/zsh/PowerShell), not VS Code
     // ============================================================
-    // === PYTHON NOTEBOOKS ===
+    // === OPTIONAL (try if you want) ===
     // ============================================================
-    "marimo-team.vscode-marimo", // Marimo notebook support
-    // "ms-toolsai.jupyter", // Core Jupyter support for .ipynb files
-    // "ms-toolsai.jupyter-keymap", // Jupyter keyboard shortcuts in VS Code
-    // "ms-toolsai.jupyter-renderers", // Rich output rendering (plots, dataframes)
-    // "ms-toolsai.vscode-jupyter-cell-tags", // Cell tagging for notebook organization
-    // ============================================================
-    // === DATABASE TOOLS ===
-    // ============================================================
-    // "mtxr.sqltools", // SQL query editor and database connections
-    // "qwtel.sqlite-viewer", // View .db files as tables in VS Code
-    // "ChuckJonas.duckdb", // DuckDB client: query CSV/Parquet/.duckdb in-editor (unofficial; no official ext exists)
-    // "RandomFractalsInc.duckdb-sql-tools", // alt: DuckDB SQL Tools (Preview)
+    // "fill-labs.dependi", // depdency update notifications in VS Code
+    // "usernamehw.errorlens", // Inline error messages - helpful but can be noisy
+    // "eamodio.gitlens", // Git history visualization - powerful but can be noisy
   ],
   "unwantedRecommendations": [
     // ============================================================
