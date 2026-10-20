@@ -1,0 +1,89 @@
+# ============================================================
+# reference/upstream.toml
+# ============================================================
+# External mathematical sources and canonical SE theory references.
+#
+# External mathematical research informs test-case construction.
+# Canonical SE theories supply the interfaces used by bridges.
+#
+# Research provenance does not create a runtime dependency.
+
+[meta]
+repository = "se-verification-self-similarity"
+version = "0.1.0"
+purpose = "Records the mathematical and theory sources used by the verification testbed."
+
+# ============================================================
+# === EXTERNAL MATHEMATICAL RESEARCH ===
+# ============================================================
+
+[[sources]]
+id = "OAI-SELF-SIMILAR"
+role = "mathematical-research"
+repository = "openai/math"
+commit = "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
+url = "https://github.com/openai/math/tree/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/OAI/MeasureTheory/SelfSimilar"
+
+files = [
+  "lean/OAI/MeasureTheory/SelfSimilar/Model.lean",
+  "lean/OAI/MeasureTheory/SelfSimilar/Coding.lean",
+  "lean/OAI/MeasureTheory/SelfSimilar/NoOverlaps.lean",
+  "lean/OAI/MeasureTheory/SelfSimilar/Attractor.lean",
+  "lean/OAI/MeasureTheory/SelfSimilar/AttractorDimension.lean",
+  "lean/OAI/MeasureTheory/SelfSimilar/InvariantLaw.lean",
+]
+
+relationship = "Research motivation and mathematical comparison; no direct Lean import."
+notes = [
+  "Distinguish finite-word affine transformations from infinite-address coding.",
+  "Investigate presentation collisions and equality of generated structures.",
+  "Examine invariance of geometric attractors under reweighting.",
+  "Do not attribute this repository's independent constructions to upstream theorems.",
+]
+
+# ============================================================
+# === CANONICAL SE THEORY SOURCES ===
+# ============================================================
+
+[[sources]]
+id = "SE-NS"
+role = "canonical-theory"
+repository = "structural-explainability/se-theory-neutral-substrate"
+version = "v0.11.0"
+url = "https://github.com/structural-explainability/se-theory-neutral-substrate/tree/v0.11.0"
+relationship = "Abstract referential account interfaces."
+
+[[sources]]
+id = "SE-IND"
+role = "canonical-theory"
+repository = "structural-explainability/se-theory-individuation"
+version = "v0.1.1"
+url = "https://github.com/structural-explainability/se-theory-individuation/tree/v0.1.1"
+relationship = "Structural setting, successful presentation, same-unit, and support-overlap results."
+
+[[sources]]
+id = "SE-COREF"
+role = "canonical-theory"
+repository = "structural-explainability/se-theory-coreference"
+version = "v0.1.0"
+url = "https://github.com/structural-explainability/se-theory-coreference/tree/v0.1.0"
+relationship = "Context-indexed co-reference accounts and generated co-reference."
+
+[[sources]]
+id = "SE-PS"
+role = "canonical-theory"
+repository = "structural-explainability/se-theory-persistence"
+version = "v0.5.0"
+url = "https://github.com/structural-explainability/se-theory-persistence/tree/v0.5.0"
+relationship = "Persistence classifications, generated identity, and presentation soundness and completeness."
+
+# ============================================================
+# === RESEARCH METHODOLOGY ===
+# ============================================================
+
+[[sources]]
+id = "SE-RESEARCH-PROTOCOLS"
+role = "research-methodology"
+repository = "structural-explainability/se-protocols-research"
+url = "https://github.com/structural-explainability/se-protocols-research"
+relationship = "Independent review, adversarial counterexamples, and scientific acceptance procedures."

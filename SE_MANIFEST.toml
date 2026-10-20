@@ -1,0 +1,102 @@
+# ============================================================
+# SE_MANIFEST.toml (Repository Declaration)
+# ============================================================
+
+schema = "se-manifest-schema"
+schema_version = "0.5.2"
+schema_url = "https://raw.githubusercontent.com/structural-explainability/se-manifest-schema/main/manifest-schema.toml"
+
+# === Framework Context ===
+
+[meta]
+framework = "Structural Explainability"
+framework_url = "https://github.com/structural-explainability"
+purpose = "Declares this repository's role in the Structural Explainability ecosystem."
+
+# === Repository Identity ===
+
+[repository]
+organization = "structural-explainability"
+name = "se-verification-self-similarity"
+class = "verification"
+kind = "formal-theory-testbed"
+status = "active"
+since = "2026"
+summary = "Independent Lean 4 mathematical stress tests of SE individuation, coreference, and persistence using self-similar constructions."
+
+# === Layer Position ===
+
+[layer]
+space = "formal-verification"
+role = "verification"
+
+# === Dependency Declarations ===
+
+[depends]
+required = [
+  { repository = "se-theory-neutral-substrate", kind = "semantic", version = "v0.11.0" },
+  { repository = "se-theory-individuation", kind = "semantic", version = "v0.1.1" },
+  { repository = "se-theory-coreference", kind = "semantic", version = "v0.1.0" },
+  { repository = "se-theory-persistence", kind = "semantic", version = "v0.5.0" },
+]
+optional = []
+
+# === Provided Artifacts ===
+
+[provides]
+artifacts = [
+  "lean-verification-library",
+  "mathematical-test-cases",
+  "formal-counterexamples",
+  "theory-bridge-checks",
+  "verification-findings",
+]
+
+# === Scope ===
+
+[scope]
+includes = [
+  "independent mathematical constructions involving self-similar systems",
+  "symbolic presentations and denotation equality",
+  "finite-word and infinite-address distinctions",
+  "attractor invariance under reweighting",
+  "formal counterexamples and boundary cases",
+  "verification against canonical SE individuation definitions",
+  "verification against canonical SE coreference definitions",
+  "verification against canonical SE persistence definitions",
+  "recorded assumptions, limitations, and unresolved obligations",
+]
+
+excludes = [
+  "canonical SE theory definitions",
+  "new foundational identity criteria",
+  "domain-specific identity authority",
+  "empirical research pilots",
+  "operational identity policy",
+  "runtime identity systems",
+  "unjustified transfer of mathematical equality to referent identity",
+  "scientific acceptance decisions",
+]
+
+# === Validation ===
+
+[validation]
+entrypoint = "lake build"
+strict_entrypoint = "lake test"
+
+# === Naming and Governance ===
+
+[naming]
+pattern = "se-verification-*"
+
+[governance]
+authority = "structural-explainability"
+
+# === External References ===
+
+[citation]
+cff = "CITATION.cff"
+preferred = "CITATION.cff"
+
+[traceability]
+identifier_map = "reference/cases.toml"

@@ -1,0 +1,225 @@
+# ============================================================
+# reference/cases.toml
+# ============================================================
+# Mathematical verification cases and prospective SE tests.
+#
+# Lean source owns definitions, assumptions, and proofs.
+# This registry records case scope, interpretation boundaries,
+# and predictions requiring independent scientific assessment.
+#
+# Formal correctness does not establish scientific adequacy.
+# Predictions recorded after initial implementation are not
+# retrospective preregistrations.
+
+[meta]
+repository = "se-verification-self-similarity"
+version = "0.1.0"
+purpose = "Test SE individuation, co-reference, and persistence against mathematical cases."
+status = "draft"
+
+# ============================================================
+# === SS-001: ADDRESS COLLISION ===
+# ============================================================
+
+[[cases]]
+id = "SS-001"
+name = "address-collision"
+status = "draft"
+
+module = "SEVerification.SelfSimilarity.Cases.AddressCollision"
+
+question = "Can distinct infinite symbolic addresses represent the same point while their first-symbol transformations differ?"
+
+theorems = [
+    "addresses_distinct",
+    "oneThenZeros_represent_half",
+    "zeroThenOnes_represent_half",
+    "shared_point",
+    "address_collision",
+]
+
+supporting_theorems = [
+    "SEVerification.SelfSimilarity.one_symbol_maps_distinct",
+    "SEVerification.SelfSimilarity.boundary_coincidence",
+    "SEVerification.SelfSimilarity.represents_unique",
+]
+
+bridges = [
+    "SEVerification.SelfSimilarity.Bridges.Individuation",
+    "SEVerification.SelfSimilarity.Bridges.Coreference",
+]
+
+bridge_theorems = [
+    "SEVerification.SelfSimilarity.Bridges.Individuation.supports_overlap",
+    "SEVerification.SelfSimilarity.Bridges.Individuation.same_unit_if_success",
+    "SEVerification.SelfSimilarity.Bridges.Individuation.pointSetting_succeeds",
+    "SEVerification.SelfSimilarity.Bridges.Individuation.exists_setting_with_success",
+    "SEVerification.SelfSimilarity.Bridges.Individuation.exists_setting_with_support_without_same_unit",
+    "SEVerification.SelfSimilarity.Bridges.Individuation.same_unit_iff_success",
+    "SEVerification.SelfSimilarity.Bridges.Coreference.witnessed_coreference",
+    "SEVerification.SelfSimilarity.Bridges.Coreference.witnessed_generated_coreference",
+    "SEVerification.SelfSimilarity.Bridges.Coreference.uncommitted_not_coreferent",
+    "SEVerification.SelfSimilarity.Bridges.Coreference.same_representation_different_commitments",
+    "SEVerification.SelfSimilarity.Bridges.Coreference.representation_does_not_force_account_commitment",
+    "SEVerification.SelfSimilarity.Bridges.Coreference.warranted_coreference_has_witness",
+    "SEVerification.SelfSimilarity.Bridges.Coreference.witness_respecting_accounts_diverge",
+    "SEVerification.SelfSimilarity.Bridges.Coreference.witnessed_inconsistent_with_distinct",
+    "SEVerification.SelfSimilarity.Bridges.Coreference.uncommitted_consistent_with_distinct",
+    "SEVerification.SelfSimilarity.Bridges.Coreference.uncommitted_pair_undetermined",
+]
+
+tests = ["SETest.SelfSimilarity"]
+
+expected_results = [
+    "The infinite symbolic addresses are distinct.",
+    "Both addresses represent the real point 1/2.",
+    "The first-symbol affine transformations differ.",
+    "The denotation supports overlap.",
+    "Same-unit follows under the stated support and success hypotheses.",
+    "A shared representation does not force a co-reference assertion in an arbitrary account.",
+    "An address that represents a point represents exactly one point.",
+    "A concrete setting adopting the denotation supports makes both collision addresses succeed and same-unit.",
+    "A setting adopting the denotation supports with no admissible presentation does not give same-unit.",
+    "With the denotation supports adopted, same-unit holds exactly when both presentations succeed.",
+    "Two accounts that both require a common point witness can disagree on the collision pair.",
+    "The witness-based account is inconsistent with a distinct-commitment on the collision pair; the account with no links is consistent with it and leaves the pair undetermined.",
+]
+
+limits = [
+    "Single-valuedness of the coding relation is proved; totality (every address represents a point) is not.",
+    "Injectivity of all finite-word transformations is not established.",
+    "The successful setting takes all reals as eligible atoms and equality as whole co-membership; its justification as an intended-whole criterion is not independently established.",
+    "The failing setting has no admissible presentation; it shows the success hypotheses are not forced, not that a principled setting rejects the collision addresses.",
+    "The distinct-commitment on the collision pair is chosen for the test and is not independently warranted; the consistency and inconsistency results do not establish which account is correct.",
+    "The interpretation of denotation supports as intended wholes requires independent justification.",
+    "The uncommitted co-reference account is a logical countermodel, not a scientifically warranted competing account.",
+    "The existing bridges establish conditional results, not the adequacy of an identity criterion.",
+]
+
+# ============================================================
+# === SS-002: REWEIGHTING ===
+# ============================================================
+
+[[cases]]
+id = "SS-002"
+name = "reweighting"
+status = "draft"
+
+module = "SEVerification.SelfSimilarity.Cases.Reweighting"
+
+question = "Can different weighted systems have the same geometric attractor, and does attractor equality determine their generated identity?"
+
+theorems = [
+    "first_symbol_distributions_differ",
+    "systems_distinct",
+    "attractor_invariant",
+    "attractor_nonempty",
+    "attractor_equality_not_system_equality",
+]
+
+bridges = ["SEVerification.SelfSimilarity.Bridges.Persistence"]
+
+bridge_theorems = [
+    "SEVerification.SelfSimilarity.Bridges.Persistence.identity_implies_equality",
+    "SEVerification.SelfSimilarity.Bridges.Persistence.equal_attractors_without_generated_identity",
+    "SEVerification.SelfSimilarity.Bridges.Persistence.attractor_presentation_sound",
+    "SEVerification.SelfSimilarity.Bridges.Persistence.attractor_presentation_not_complete",
+    "SEVerification.SelfSimilarity.Bridges.Persistence.reweightPreserving_wellFormed",
+    "SEVerification.SelfSimilarity.Bridges.Persistence.reweight_preserving_identity",
+    "SEVerification.SelfSimilarity.Bridges.Persistence.reweight_not_preserving_not_identity",
+    "SEVerification.SelfSimilarity.Bridges.Persistence.classification_decides_identity",
+    "SEVerification.SelfSimilarity.Bridges.Persistence.reweight_classifications_noncollapsing",
+]
+
+tests = ["SETest.SelfSimilarity"]
+
+expected_results = [
+    "The first-symbol probability distributions differ.",
+    "The weighted system records are distinct.",
+    "The geometric attractors are equal and nonempty.",
+    "The original no-preservation model does not identify the two systems.",
+    "The attractor presentation is sound but incomplete in that model.",
+    "With a single declared step from the fair to the biased system, classifying that step as preserving makes the systems generated-identical; classifying nothing as preserving does not; the attractors are equal in both.",
+    "The two classifications are non-collapsing on that dynamics.",
+]
+
+limits = [
+    "No invariant self-similar probability measure is constructed.",
+    "Different first-symbol distributions do not establish a result about complete invariant probability laws.",
+    "In the original model the dynamics has no step relating the two systems and generated identity reduces to record equality.",
+    "The reweighting dynamics has one declared step from the fair to the biased system; it is not derived from a transformation of a measure.",
+    "The initial generated identity relation reduces to record equality.",
+    "The initial classification is a logical countermodel, not an independently justified persistence criterion.",
+    "Attractor equality alone does not determine strict identity of weighted systems.",
+    "Persistence's identity relation depends only on the preserving set, so the verdict follows from which transformations are declared preserving; applicability and the ign/brk distinction do not change it.",
+    "Both classifications act on one carrier (weighted systems); a separate referent such as the attractor with its own carrier is not modeled.",
+    "The preserving classification is a declared choice, not an independently justified persistence criterion.",
+]
+
+# ============================================================
+# === PROSPECTIVE SE TESTS ===
+# ============================================================
+# These predictions follow the initial mathematical cases
+# and bridge implementations. They are not preregistered
+# predictions for the already established results.
+#
+# Each test requires:
+#
+# 1. An interpretation criterion justified independently
+#    of the desired outcome.
+# 2. A concrete formal realization of that criterion.
+# 3. An outcome capable of challenging its adequacy.
+#
+# A theorem that follows solely by construction does not
+# discharge the scientific acceptance obligation.
+#
+# Pending status means that the scientific test remains open,
+# even if related Lean theorems compile.
+
+# ============================================================
+# === SS-001 / INDIVIDUATION ===
+# ============================================================
+
+[[predictions]]
+id = "SS-001-IND"
+case = "SS-001"
+theory = "individuation"
+status = "pending"
+
+expected = "A justified point-based setting can recognize the collision addresses as presentations of one whole while distinguishing presentations of different points."
+
+rejection_condition = "No setting satisfying the independently justified point-based criteria can represent the required same-unit and distinct-unit judgments."
+
+required_warrant = "Independent justification of the eligible atoms, presentation admissibility, denotation supports, and whole-co-membership criterion."
+
+# ============================================================
+# === SS-001 / CO-REFERENCE ===
+# ============================================================
+
+[[predictions]]
+id = "SS-001-COREF"
+case = "SS-001"
+theory = "coreference"
+status = "pending"
+
+expected = "A justified point-denotation account identifies the collision addresses as co-referent without identifying references merely because their symbolic forms coincide or their evidence is incomplete."
+
+rejection_condition = "A proposed point-denotation criterion produces a judgment incompatible with independently established denotation and reference requirements."
+
+required_warrant = "An independently justified account of reference to mathematical points, including the conditions under which shared denotation warrants co-reference and when distinctness may be asserted."
+
+# ============================================================
+# === SS-002 / PERSISTENCE ===
+# ============================================================
+
+[[predictions]]
+id = "SS-002-PS"
+case = "SS-002"
+theory = "persistence"
+status = "pending"
+
+expected = "With the reweighting transformation fixed, independently justified identity criteria can distinguish persistence of the geometric attractor from persistence of the weighted system."
+
+rejection_condition = "The proposed persistence criteria cannot reproduce the independently justified referent-specific judgments, or require inconsistent classifications for the same referent and transformation."
+
+required_warrant = "Independent specification of the intended referent kinds, the reweighting transformation, and the conditions under which that transformation preserves or breaks identity."

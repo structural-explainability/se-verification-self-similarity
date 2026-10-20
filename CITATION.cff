@@ -1,0 +1,50 @@
+# ============================================================
+# CITATION.cff (How to cite this project)
+# ============================================================
+# REQ.UNIVERSAL: Professional open projects SHOULD include this file.
+# May reference upstream dependencies, but must not refer to downstream.
+# USAGE: See https://citation-file-format.github.io/ for details.
+# check with:
+# uvx cffconvert --validate
+
+cff-version: "1.2.0"
+message: "If you use this work, please cite it using the metadata in CITATION.cff."
+type: software
+
+title: "SE Verification: Self-Similarity"
+
+authors:
+  - family-names: Case
+    given-names: Denise M.
+    orcid: "https://orcid.org/0000-0001-6165-7389"
+    affiliation: "Northwest Missouri State University, School of Computer Science and Information Systems, Maryville, MO, USA"
+
+repository-code: "https://github.com/structural-explainability/se-verification-self-similarity"
+url: "https://github.com/structural-explainability/se-verification-self-similarity"
+license: MIT
+
+abstract: >
+  Independent Lean 4 mathematical verification testbed for
+  Structural Explainability (SE) individuation, co-reference,
+  and persistence. The project studies self-similar mathematical
+  constructions, including symbolic coding, distinct presentations
+  of identical points, finite-word transformations, and attractor
+  invariance under changes to probability weights. It develops
+  formal examples and counterexamples to examine the mathematical
+  consequences and scientific interpretation boundaries of
+  canonical SE theory definitions. The repository separates
+  mathematical verification from empirical validation and
+  does not define new foundational identity criteria.
+
+keywords:
+  - structural-explainability
+  - formal-verification
+  - lean4
+  - mathematical-testbed
+  - counterexamples
+  - self-similarity
+  - individuation
+  - coreference
+  - persistence
+  - identity
+  - reproducibility
